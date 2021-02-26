@@ -1,2 +1,22 @@
 class Post
+    attr_accessor :title, :author
+    @@all = []
+
+    def initialize(title)
+        @title = title
+        @@all << self
+    end
+
+    def self.all 
+        @@all
+    end
+
+    def author_name
+        if !author
+            nil
+        else
+            author.name #is author already connected? #self.author.name means the same too?
+        end
+    end
+
 end
